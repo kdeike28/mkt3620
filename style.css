@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Wireframe-style layout
+   Sage green background, content inset 10% from each screen edge
+   ========================================================================== */
+
+:root {
+  --sage-green: #A3B899;
+  --sage-green-dark: #8FA582;
+  --ink: #1a1a1a;
+  --border: 2px solid var(--ink);
+  --content-inset: 10vw;   /* 10% of screen width, each side */
+  --content-inset-v: 4vh;  /* smaller vertical inset so content isn't squeezed on short screens */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--sage-green);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* The white "page" sits inset 10% from each edge, sage green shows through
+   around it — matches the wireframe's outer frame */
+.site-wrapper {
+  width: 80vw;              /* 100% - 10% - 10% */
+  min-height: 80vh;
+  margin: var(--content-inset-v) auto;
+  margin-left: var(--content-inset);
+  margin-right: var(--content-inset);
+  background: #ffffff;
+  border: var(--border);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  border: var(--border);
+  padding: 0.5rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-links {
+  border: var(--border);
+  padding: 0.6rem 1.25rem;
+  align-self: flex-start;
+}
+
+.social-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Primary navigation */
+.primary-nav {
+  border: var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.85rem 1rem;
+}
+
+.primary-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+
+.primary-nav a:hover {
+  text-decoration: underline;
+}
+
+.primary-nav a.active {
+  border-bottom: 2px solid var(--ink);
+}
+
+/* Mobile nav toggle (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  border: var(--border);
+  background: #fff;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  border: var(--border);
+  margin: 0 1.5rem 1.5rem;
+  padding: 2rem;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #444;
+  max-width: 60ch;
+}
+
+/* ---------- Teasers ---------- */
+
+.teasers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0 1.5rem 1.5rem;
+}
+
+.teaser {
+  border: var(--border);
+  padding: 1.5rem;
+}
+
+.teaser h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.teaser p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: var(--border);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer .social-links {
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  :root {
+    --content-inset: 5vw; /* keep more usable width on tablets */
+  }
+
+  .teasers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --content-inset: 3vw;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .primary-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .primary-nav.open ul {
+    display: flex;
+  }
+
+  .header-top {
+    align-items: center;
+  }
+}
