@@ -1,43 +1,99 @@
-// nav.js
-// Reusable top navigation bar for all pages on the site.
-// Include this file on every page and add <div id="site-nav"></div> where you want it to appear.
+(function () {
+  "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navItems = [
-    { label: "About Me", href: "index.html" },
-    { label: "Research", href: "research.html" },
-    { label: "Teaching", href: "teaching.html" },
-    { label: "Personal", href: "personal.html" }
+  // ---- 1. Single source of truth for site navigation -----------------
+  // Edit this list once; every page that includes nav.js stays in sync.
+  const NAV_LINKS = [
+    { label: "Home", href: "index.html" },
+    { label: "About", href: "about.html" },
+    { label: "Projects", href: "projects.html" },
+    { label: "Blog", href: "blog.html" },
+    { label: "Contact", href: "contact.html" },
   ];
 
-  const nav = document.createElement("nav");
-  nav.className = "site-nav";
+  const SOCIAL_LINKS = [
+    { label: "GitHub", href: "https://github.com/" },
+    { label: "Twitter", href: "https://twitter.com/" },
+    { label: "LinkedIn", href: "https://linkedin.com/" },
+  ];
 
-  const list = document.createElement("ul");
-  list.className = "site-nav-list";
+  // ---- 2. Helpers -------------------------------------------------------
 
-  navItems.forEach(item => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = item.href;
-    a.textContent = item.label;
-
-    // Highlight the current page
-    if (window.location.pathname.endsWith(item.href)) {
-      a.classList.add("active");
-    }
-
-    li.appendChild(a);
-    list.appendChild(li);
-  });
-
-  nav.appendChild(list);
-
-  const navContainer = document.getElementById("site-nav");
-  if (navContainer) {
-    navContainer.appendChild(nav);
-  } else {
-    // Fallback: insert at the very top of the body
-    document.body.insertBefore(nav, document.body.firstChild);
+  function currentFileName() {
+    const path = window.location.pathname;
+    const last = path.substring(path.lastIndexOf("/") + 1);
+    return last === "" ? "index.html" : last;
   }
-});
+
+  function buildList(container, links, { markActive } = {}) {
+    if (!container) return;
+    const ul = document.createElement("ul");
+
+    links.forEach((link) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = link.href;
+      a.textContent = link.label;
+
+      if (markActive && link.href === currentFileName()) {
+        a.classList.add("active");
+        a.setAttribute("aria-current", "page");
+      }
+
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    container.innerHTML = "";
+    container.appendChild(ul);
+  }
+
+  // ---- 3. Render nav + social links --------------------------------------
+
+  function renderPrimaryNav() {
+    const nav = document.querySelector(".primary-nav");
+    if (!nav) return;
+    buildList(nav, NAV_LINKS, { markActive: true });
+  }
+
+  function renderSocialLinks() {
+    document.querySelectorAll(".social-links").forEach((el) => {
+      buildList(el, SOCIAL_LINKS);
+    });
+  }
+
+  // ---- 4. Mobile toggle ---------------------------------------------------
+
+  function wireMobileToggle() {
+    const nav = document.querySelector(".primary-nav");
+    const toggle = document.querySelector(".nav-toggle");
+    if (!nav || !toggle) return;
+
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Close the mobile menu after a link is tapped
+    nav.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // ---- 5. Init --------------------------------------------------------
+
+  function init() {
+    renderPrimaryNav();
+    renderSocialLinks();
+    wireMobileToggle();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
