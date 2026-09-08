@@ -1,19 +1,6 @@
-/* ==========================================================================
-   nav.js — shared navigation system
-   Include this one file on every page:
-     <script src="nav.js" defer></script>
-
-   It will:
-   1. Build the primary nav links from a single config (edit NAV_LINKS below)
-   2. Highlight the link matching the current page
-   3. Wire up the mobile toggle button
-   ========================================================================== */
-
 (function () {
   "use strict";
 
-  // ---- 1. Single source of truth for site navigation -----------------
-  // Edit this list once; every page that includes nav.js stays in sync.
   const NAV_LINKS = [
     { label: "Home", href: "index.html" },
     { label: "About", href: "about.html" },
@@ -27,8 +14,6 @@
     { label: "Twitter", href: "https://twitter.com/" },
     { label: "LinkedIn", href: "https://linkedin.com/" },
   ];
-
-  // ---- 2. Helpers -------------------------------------------------------
 
   function currentFileName() {
     const path = window.location.pathname;
@@ -59,8 +44,6 @@
     container.appendChild(ul);
   }
 
-  // ---- 3. Render nav + social links --------------------------------------
-
   function renderPrimaryNav() {
     const nav = document.querySelector(".primary-nav");
     if (!nav) return;
@@ -73,8 +56,6 @@
     });
   }
 
-  // ---- 4. Mobile toggle ---------------------------------------------------
-
   function wireMobileToggle() {
     const nav = document.querySelector(".primary-nav");
     const toggle = document.querySelector(".nav-toggle");
@@ -85,7 +66,6 @@
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close the mobile menu after a link is tapped
     nav.addEventListener("click", (e) => {
       if (e.target.tagName === "A") {
         nav.classList.remove("open");
@@ -93,8 +73,6 @@
       }
     });
   }
-
-  // ---- 5. Init --------------------------------------------------------
 
   function init() {
     renderPrimaryNav();
