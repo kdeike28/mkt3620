@@ -1,30 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Your Site Name</title>
+  <meta name="description" content="Your site description goes here." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
+
   <div class="site-wrapper">
+
+    <!-- ===== Header ===== -->
     <header class="site-header">
       <div class="header-top">
-        <div class="logo"><a href="index.html">Logo</a></div>
+        <div class="logo">
+          <a href="index.html">Logo</a>
+        </div>
+
+        <!-- Populated automatically by nav.js -->
         <div class="social-links"></div>
       </div>
-      <button class="nav-toggle" aria-expanded="false">Menu</button>
-      <nav class="primary-nav"></nav>
+
+      <!-- Shown only on small screens (see styles.css) -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <!-- Populated automatically by nav.js -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
     </header>
 
+    <!-- ===== Hero ===== -->
     <section class="hero">
-      <h1>Hero image / slideshow / video</h1>
-      <p>Big image and text goes here.</p>
+      <h1>Hero image&hellip;</h1>
+      <p>Image slideshow / video / BIG image and text goes here. Swap this block out for a real image, background video, or carousel.</p>
     </section>
 
+    <!-- ===== Teasers ===== -->
     <section class="teasers">
-      <div class="teaser"><h2>1st teaser</h2><p>More info to deeper content.</p></div>
-      <div class="teaser"><h2>2nd teaser</h2><p>More info to deeper content.</p></div>
-      <div class="teaser"><h2>3rd teaser</h2><p>More info to deeper content.</p></div>
+      <article class="teaser">
+        <h2>1st teaser&hellip;</h2>
+        <p>More info to deeper content.</p>
+      </article>
+
+      <article class="teaser">
+        <h2>2nd teaser&hellip;</h2>
+        <p>More info to deeper content.</p>
+      </article>
+
+      <article class="teaser">
+        <h2>3rd teaser&hellip;</h2>
+        <p>More info to deeper content.</p>
+      </article>
     </section>
 
+    <!-- ===== Footer ===== -->
     <footer class="site-footer">
-      <p>© Your Site</p>
+      <p>&copy; <span id="year"></span> Your Site Name</p>
+
+      <!-- Populated automatically by nav.js -->
       <div class="social-links"></div>
     </footer>
+
   </div>
 
   <script src="nav.js" defer></script>
+  <script>
+    // Small inline touch — auto-fill the copyright year.
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
+</html>
