@@ -11,33 +11,26 @@
 
   <div class="site-wrapper">
 
-    <!-- ===== Header ===== -->
     <header class="site-header">
       <div class="header-top">
         <div class="logo">
           <a href="index.html">Logo</a>
         </div>
-
-        <!-- Populated automatically by nav.js -->
         <div class="social-links"></div>
       </div>
 
-      <!-- Shown only on small screens (see styles.css) -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         Menu
       </button>
 
-      <!-- Populated automatically by nav.js -->
       <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
     </header>
 
-    <!-- ===== Hero ===== -->
     <section class="hero">
       <h1>Hero image&hellip;</h1>
-      <p>Image slideshow / video / BIG image and text goes here. Swap this block out for a real image, background video, or carousel.</p>
+      <p>Image slideshow / video / BIG image and text goes here.</p>
     </section>
 
-    <!-- ===== Teasers ===== -->
     <section class="teasers">
       <article class="teaser">
         <h2>1st teaser&hellip;</h2>
@@ -55,11 +48,8 @@
       </article>
     </section>
 
-    <!-- ===== Footer ===== -->
     <footer class="site-footer">
       <p>&copy; <span id="year"></span> Your Site Name</p>
-
-      <!-- Populated automatically by nav.js -->
       <div class="social-links"></div>
     </footer>
 
@@ -67,7 +57,6 @@
 
   <script src="nav.js" defer></script>
   <script>
-    // Small inline touch — auto-fill the copyright year.
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
