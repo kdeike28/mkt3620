@@ -1,15 +1,10 @@
-/* ==========================================================================
-   Wireframe-style layout
-   Sage green background, content inset 10% from each screen edge
-   ========================================================================== */
-
 :root {
   --sage-green: #A3B899;
   --sage-green-dark: #8FA582;
   --ink: #1a1a1a;
   --border: 2px solid var(--ink);
   --content-inset: 10vw;   /* 10% of screen width, each side */
-  --content-inset-v: 4vh;  /* smaller vertical inset so content isn't squeezed on short screens */
+  --content-inset-v: 4vh;
 }
 
 * {
@@ -29,10 +24,8 @@ body {
   line-height: 1.5;
 }
 
-/* The white "page" sits inset 10% from each edge, sage green shows through
-   around it — matches the wireframe's outer frame */
 .site-wrapper {
-  width: 80vw;              /* 100% - 10% - 10% */
+  width: 80vw;
   min-height: 80vh;
   margin: var(--content-inset-v) auto;
   margin-left: var(--content-inset);
@@ -40,8 +33,6 @@ body {
   background: #ffffff;
   border: var(--border);
 }
-
-/* ---------- Header ---------- */
 
 .site-header {
   padding: 1.5rem 1.5rem 0;
@@ -92,7 +83,6 @@ body {
   text-decoration: underline;
 }
 
-/* Primary navigation */
 .primary-nav {
   border: var(--border);
   margin-bottom: 1.5rem;
@@ -122,7 +112,6 @@ body {
   border-bottom: 2px solid var(--ink);
 }
 
-/* Mobile nav toggle (hidden on desktop) */
 .nav-toggle {
   display: none;
   border: var(--border);
@@ -131,8 +120,6 @@ body {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-
-/* ---------- Hero ---------- */
 
 .hero {
   border: var(--border);
@@ -156,8 +143,6 @@ body {
   max-width: 60ch;
 }
 
-/* ---------- Teasers ---------- */
-
 .teasers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -180,8 +165,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* ---------- Footer ---------- */
-
 .site-footer {
   border-top: var(--border);
   padding: 1.25rem 1.5rem;
@@ -196,11 +179,9 @@ body {
   margin: 0;
 }
 
-/* ---------- Responsive ---------- */
-
 @media (max-width: 900px) {
   :root {
-    --content-inset: 5vw; /* keep more usable width on tablets */
+    --content-inset: 5vw;
   }
 
   .teasers {
