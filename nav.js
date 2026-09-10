@@ -16,7 +16,7 @@
   // Edit this list once; every page that includes nav.js stays in sync.
   const NAV_LINKS = [
     { label: "Home", href: "index.html" },
-    { label: "About", href: "about.html" },
+    { label: "Products", href: "products.html" },
     { label: "Projects", href: "projects.html" },
     { label: "Blog", href: "blog.html" },
     { label: "Contact", href: "contact.html" },
