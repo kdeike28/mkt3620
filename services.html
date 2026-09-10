@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Kwin Deike</title>
+  <meta name="description" content="Washing and drying services." />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <div class="header-top">
+        <div class="logo">
+          <span>Kwin Deike</span>
+        </div>
+        <div class="social-links"></div>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
+    </header>
+
+    <section class="page-intro">
+      <h1>Our services</h1>
+      <p>We offer simple, reliable washing and drying services. Drop off your load and pick it up fresh and folded.</p>
+    </section>
+
+    <section class="product-grid">
+
+      <article class="product-card">
+        <div class="product-image">Washing service photo</div>
+        <div class="product-info">
+          <div class="product-name">Washing</div>
+          <div class="product-meta">Standard wash &middot; up to 15 lbs per load</div>
+          <p class="product-meta">Gentle, color-safe wash cycle using quality detergent. Ready within 24 hours.</p>
+          <div class="product-price">$12 per load</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Book washing</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image">Drying service photo</div>
+        <div class="product-info">
+          <div class="product-name">Drying</div>
+          <div class="product-meta">Standard dry &middot; up to 15 lbs per load</div>
+          <p class="product-meta">Low-heat tumble dry to protect fabric, folded and ready to go.</p>
+          <div class="product-price">$8 per load</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Book drying</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image">Wash &amp; dry bundle photo</div>
+        <div class="product-info">
+          <div class="product-name">Wash &amp; Dry Bundle</div>
+          <div class="product-meta">Both services &middot; up to 15 lbs per load</div>
+          <p class="product-meta">Wash and dry in one drop-off. Our most popular option.</p>
+          <div class="product-price">$18 per load</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Book bundle</button>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Kwin Deike</p>
+      <div class="social-links"></div>
+    </footer>
+
+  </div>
+
+  <script src="nav.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
