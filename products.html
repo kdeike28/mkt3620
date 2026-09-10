@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Kwin Deike</title>
+  <meta name="description" content="Shop the clothing collection." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <div class="header-top">
+        <div class="logo">
+          <a href="index.html">Kwin Deike</a>
+        </div>
+        <div class="social-links"></div>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
+    </header>
+
+    <section class="page-intro">
+      <h1>Clothing collection</h1>
+      <p>Browse the current lineup below. Swap in real photos, names, and prices for each piece when you're ready.</p>
+    </section>
+
+    <div class="product-filters" role="group" aria-label="Filter products by category">
+      <button type="button" class="active" data-filter="all">All</button>
+      <button type="button" data-filter="tops">Tops</button>
+      <button type="button" data-filter="bottoms">Bottoms</button>
+      <button type="button" data-filter="outerwear">Outerwear</button>
+      <button type="button" data-filter="accessories">Accessories</button>
+    </div>
+
+    <section class="product-grid" id="product-grid">
+
+      <article class="product-card" data-category="tops">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Cotton Crewneck Tee</div>
+          <div class="product-meta">Tops &middot; available in 4 colors</div>
+          <div class="product-price">$28</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="tops">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Relaxed Linen Shirt</div>
+          <div class="product-meta">Tops &middot; available in 3 colors</div>
+          <div class="product-price">$54</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="bottoms">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Straight Leg Trousers</div>
+          <div class="product-meta">Bottoms &middot; available in 2 colors</div>
+          <div class="product-price">$68</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="bottoms">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Washed Denim Jeans</div>
+          <div class="product-meta">Bottoms &middot; available in 3 washes</div>
+          <div class="product-price">$74</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="outerwear">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Wool Blend Overcoat</div>
+          <div class="product-meta">Outerwear &middot; available in 2 colors</div>
+          <div class="product-price">$180</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="outerwear">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Quilted Bomber Jacket</div>
+          <div class="product-meta">Outerwear &middot; available in 3 colors</div>
+          <div class="product-price">$120</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessories">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Canvas Tote Bag</div>
+          <div class="product-meta">Accessories &middot; one size</div>
+          <div class="product-price">$32</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessories">
+        <div class="product-image">Product photo</div>
+        <div class="product-info">
+          <div class="product-name">Ribbed Beanie</div>
+          <div class="product-meta">Accessories &middot; available in 4 colors</div>
+          <div class="product-price">$22</div>
+        </div>
+        <div class="product-actions">
+          <button type="button">Add to cart</button>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Kwin Deike</p>
+      <div class="social-links"></div>
+    </footer>
+
+  </div>
+
+  <script src="nav.js" defer></script>
+  <script src="products.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
