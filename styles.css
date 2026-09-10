@@ -1,1 +1,442 @@
-/dev/null
+/* ==========================================================================
+   styles.css — Complete styling for the layout diagram
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+/* ==========================================================================
+   HEADER SECTION (Logo + Infographic + Navigation)
+   ========================================================================== */
+
+.header {
+    background-color: #fff;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    padding-right: 20px;
+}
+
+.infographic-area {
+    background-color: #f9f9f9;
+    border: 2px solid #333;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.primary-nav {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+}
+
+.primary-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.primary-nav li {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.primary-nav a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-right: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.primary-nav li:last-child a {
+    border-right: none;
+}
+
+.secondary-nav {
+    background-color: #e8e8e8;
+    padding: 0;
+}
+
+.secondary-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.secondary-nav li {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.secondary-nav a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border-right: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-nav a:hover {
+    background-color: #d0d0d0;
+}
+
+.secondary-nav li:last-child a {
+    border-right: none;
+}
+
+/* ==========================================================================
+   MAIN LAYOUT CONTAINER (Three-column layout)
+   ========================================================================== */
+
+.layout-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* LEFT SIDEBAR */
+.sidebar-left {
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 15px;
+    height: fit-content;
+}
+
+.sidebar-left h3 {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.sidebar-left h3:first-child {
+    margin-top: 0;
+}
+
+.sidebar-left ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar-left li {
+    margin: 8px 0;
+}
+
+.sidebar-left a {
+    text-decoration: none;
+    color: #0066cc;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-left a:hover {
+    color: #003366;
+    text-decoration: underline;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 30px;
+}
+
+.hero {
+    margin-bottom: 30px;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.content p {
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+/* RIGHT SIDEBAR (Sticky) */
+.sidebar-right {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 15px;
+}
+
+.sticky-content h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.sticky-section {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sticky-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.sticky-section h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.sticky-section p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #0066cc;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    border-top: 2px solid #000;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.footer-links {
+    margin: 12px 0;
+    font-size: 13px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00ccff;
+    text-decoration: underline;
+}
+
+.footer-content a[href^="mailto:"] {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a[href^="mailto:"]:hover {
+    color: #00ccff;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .sidebar-left {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        height: auto;
+    }
+    
+    .sidebar-right {
+        position: static;
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .logo {
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+    
+    .primary-nav ul,
+    .secondary-nav ul {
+        flex-direction: column;
+    }
+    
+    .primary-nav li,
+    .secondary-nav li {
+        flex: none;
+        min-width: auto;
+        text-align: left;
+    }
+    
+    .primary-nav a,
+    .secondary-nav a {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .primary-nav li:last-child a,
+    .secondary-nav li:last-child a {
+        border-bottom: none;
+    }
+    
+    .layout-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .sidebar-left {
+        grid-template-columns: 1fr;
+        order: 2;
+    }
+    
+    .main-content {
+        order: 1;
+        padding: 15px;
+    }
+    
+    .sidebar-right {
+        order: 3;
+    }
+    
+    .content h1 {
+        font-size: 22px;
+    }
+    
+    .footer-content p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+    
+    .content h1 {
+        font-size: 20px;
+    }
+    
+    .sidebar-right {
+        padding: 10px;
+    }
+    
+    .sticky-section {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+}
