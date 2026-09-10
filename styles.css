@@ -4,8 +4,8 @@
    ========================================================================== */
 
 :root {
-  --sage-green: #A3B899;
-  --sage-green-dark: #8FA582;
+  --sage-green: #FADCE8;
+  --sage-green-dark: #F5C4D3;
   --ink: #1a1a1a;
   --border: 2px solid var(--ink);
   --content-inset: 10vw;   /* 10% of screen width, each side */
