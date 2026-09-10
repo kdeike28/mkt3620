@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Your Name</title>
+    <title>Marketing Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header with Logo and Navigation -->
-    <header>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <!-- Logo + Infographic Area -->
         <div class="header-top">
             <div class="logo">Logo</div>
             <div class="infographic-area">
@@ -16,112 +17,130 @@
             </div>
         </div>
         
+        <!-- Primary Navigation -->
         <nav class="primary-nav">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         
+        <!-- Secondary Navigation -->
         <nav class="secondary-nav">
             <ul>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#blog">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Sidebar Navigation (Left) -->
+    <!-- MAIN LAYOUT CONTAINER -->
+    <div class="layout-container">
+        
+        <!-- LEFT SIDEBAR (Primary Navigation) -->
         <aside class="sidebar-left">
             <div class="sidebar-content">
-                <h3>Navigation</h3>
+                <h3>Primary Navigation</h3>
                 <ul>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+                
+                <h3>Secondary Navigation</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- MAIN CONTENT AREA -->
         <main class="main-content">
             <!-- Hero Image Section -->
             <section class="hero">
-                <img src="hero-image.jpg" alt="Hero Image" class="hero-image">
+                <img src="https://via.placeholder.com/600x300" alt="Hero Image" class="hero-image">
             </section>
 
-            <!-- Main Content -->
+            <!-- Main Content Section -->
             <section class="content">
-                <h1>Welcome to Your Portfolio</h1>
+                <h1>Main Content Area</h1>
                 <p>
-                    This area HAS to contain html text and images (ie not image text). Text should be around 400 words and contain 5-7% keywords. 
+                    This area HAS to contain HTML text and images (ie not image text). Text should be around 400 words and contain 5-7% keywords.
+                </p>
+                <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
                     in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                    sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
                 <p>
-                    Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem 
-                    sequi nesciunt.
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                 </p>
             </section>
         </main>
 
-        <!-- Sidebar (Right) -->
+        <!-- RIGHT SIDEBAR (Sticky Content) -->
         <aside class="sidebar-right">
             <div class="sticky-content">
                 <h3>Sticky Content</h3>
-                <ul>
-                    <li>
-                        <h4>News Items</h4>
-                        <p>Latest updates and announcements</p>
-                    </li>
-                    <li>
-                        <h4>Adverts</h4>
-                        <p>Featured promotions</p>
-                    </li>
-                    <li>
-                        <h4>Offers</h4>
-                        <p>Special deals and promotions</p>
-                    </li>
-                    <li>
-                        <h4>General Site Info</h4>
-                        <p>Important information</p>
-                    </li>
-                    <li>
-                        <h4>Social Networking</h4>
-                        <p>Follow us on social media</p>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon">f</a>
-                            <a href="#" class="social-icon">t</a>
-                            <a href="#" class="social-icon">in</a>
-                        </div>
-                    </li>
-                </ul>
+                
+                <div class="sticky-section">
+                    <h4>📰 News Items</h4>
+                    <p>Latest updates and announcements about our products and services</p>
+                </div>
+                
+                <div class="sticky-section">
+                    <h4>📢 Adverts</h4>
+                    <p>Featured promotions and special announcements</p>
+                </div>
+                
+                <div class="sticky-section">
+                    <h4>🎁 Offers</h4>
+                    <p>Special deals and limited-time promotions</p>
+                </div>
+                
+                <div class="sticky-section">
+                    <h4>ℹ️ General Site Info</h4>
+                    <p>Important information about our company</p>
+                </div>
+                
+                <div class="sticky-section">
+                    <h4>🌐 Social Networking</h4>
+                    <div class="social-icons">
+                        <a href="#facebook" class="social-icon" title="Facebook">f</a>
+                        <a href="#twitter" class="social-icon" title="Twitter">𝕏</a>
+                        <a href="#linkedin" class="social-icon" title="LinkedIn">in</a>
+                    </div>
+                </div>
             </div>
         </aside>
+
     </div>
 
-    <!-- Footer -->
-    <footer>
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="footer-content">
-            <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-            </ul>
+            <p>&copy; <span id="year"></span> Your Company Name. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a> | 
+                <a href="#about">About</a> | 
+                <a href="#contact">Contact</a> | 
+                <a href="#privacy">Privacy Policy</a>
+            </div>
             <p><a href="mailto:webmaster@yoursite.com">webmaster@yoursite.com</a></p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="nav.js" defer></script>
+    <script>
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
