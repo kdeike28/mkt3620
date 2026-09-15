@@ -61,9 +61,7 @@
       if (!logo || logo.querySelector(".student-name")) return;
 
       const logoLink = logo.querySelector("a");
-      if (logoLink) {
-        logoLink.style.fontSize = "28px";
-      }
+      if (logoLink) logoLink.style.fontSize = "28px";
 
       logo.style.borderRight = "none";
       logo.style.paddingRight = "0";
@@ -250,10 +248,11 @@
 
     document.querySelectorAll(".cart-count").forEach((el) => {
       el.textContent = count;
+      el.hidden = count === 0;
     });
 
     const itemsContainer = document.querySelector(".cart-items");
-    const totalElement = document.querySelector(".cart-total span");
+    const totalElement = document.querySelector(".cart-total span") || document.querySelector(".cart-total");
     if (!itemsContainer || !totalElement) return;
 
     totalElement.textContent = `$${total.toFixed(2)}`;
@@ -279,23 +278,36 @@
     `).join("");
   }
 
+  function openCart() {
+    const panel = document.querySelector(".cart-panel");
+    if (panel) panel.classList.add("open");
+  }
+
+  function closeCart() {
+    const panel = document.querySelector(".cart-panel");
+    if (panel) panel.classList.remove("open");
+  }
+
   function renderCart() {
     injectCartStyles();
 
     document.querySelectorAll(".header-top").forEach((headerTop) => {
-      if (headerTop.querySelector(".cart-button")) return;
+      let cartButton = headerTop.querySelector(".cart-button");
 
-      const cartButton = document.createElement("button");
-      cartButton.type = "button";
-      cartButton.className = "cart-button";
-      cartButton.setAttribute("aria-label", "Open shopping cart");
-      cartButton.innerHTML = '<span aria-hidden="true">🛒</span><span class="cart-count">0</span>';
-      headerTop.appendChild(cartButton);
+      if (!cartButton) {
+        cartButton = document.createElement("button");
+        cartButton.type = "button";
+        cartButton.className = "cart-button";
+        cartButton.setAttribute("aria-label", "Open shopping cart");
+        cartButton.innerHTML = '<span aria-hidden="true">🛒</span><span class="cart-count">0</span>';
+        headerTop.appendChild(cartButton);
+      }
 
-      cartButton.addEventListener("click", () => {
-        const panel = document.querySelector(".cart-panel");
-        if (panel) panel.classList.toggle("open");
-      });
+      // Also wire the cart button when the page already contains its own cart markup.
+      if (!cartButton.dataset.cartWired) {
+        cartButton.addEventListener("click", openCart);
+        cartButton.dataset.cartWired = "true";
+      }
     });
 
     if (!document.querySelector(".cart-panel")) {
@@ -312,10 +324,12 @@
         <a class="cart-checkout" href="contact.html">Continue to Schedule</a>
       `;
       document.body.appendChild(panel);
+    }
 
-      panel.querySelector(".cart-close").addEventListener("click", () => {
-        panel.classList.remove("open");
-      });
+    const closeButton = document.querySelector(".cart-panel .cart-close");
+    if (closeButton && !closeButton.dataset.cartWired) {
+      closeButton.addEventListener("click", closeCart);
+      closeButton.dataset.cartWired = "true";
     }
 
     updateCartUI();
@@ -366,7 +380,6 @@
   }
 
   function renderSocialLinks() {
-    // Keep the Services and Contact pages clean by hiding the social-link list there.
     if (["services.html", "contact.html"].includes(currentFileName())) return;
 
     document.querySelectorAll(".social-links").forEach((el) => {
