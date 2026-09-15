@@ -60,6 +60,15 @@
       const logo = headerTop.querySelector(".logo");
       if (!logo || logo.querySelector(".student-name")) return;
 
+      const logoLink = logo.querySelector("a");
+      if (logoLink) {
+        logoLink.style.fontSize = "28px";
+      }
+
+      logo.style.borderRight = "none";
+      logo.style.paddingRight = "0";
+      logo.style.fontSize = "28px";
+
       const name = document.createElement("span");
       name.className = "student-name";
       name.textContent = "Kwin Deike";
