@@ -1,23 +1,14 @@
 /* ==========================================================================
    nav.js — shared navigation system
-   Include this one file on every page:
-     <script src="nav.js" defer></script>
-
-   It will:
-   1. Build the primary nav links from a single config (edit NAV_LINKS below)
-   2. Highlight the link matching the current page
-   3. Wire up the mobile toggle button
    ========================================================================== */
 
 (function () {
   "use strict";
 
-  // ---- 1. Single source of truth for site navigation -----------------
   const NAV_LINKS = [
     { label: "Home", href: "index.html" },
     { label: "Products", href: "products.html" },
     { label: "Services", href: "services.html" },
-    { label: "Blog", href: "blog.html" },
     { label: "Contact", href: "contact.html" },
   ];
 
