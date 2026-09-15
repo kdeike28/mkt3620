@@ -12,6 +12,29 @@
   <style>
     .product-image { height: 280px; overflow: hidden; background: #fff5f8; }
     .product-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cart-button { position: relative; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #c71585; border: 2px solid #fff; padding: 9px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: .2s ease; }
+    .cart-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+    .cart-icon { font-size: 21px; line-height: 1; }
+    .cart-count { min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: #c71585; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+    .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .25s ease; z-index: 998; }
+    .cart-overlay.open { opacity: 1; pointer-events: auto; }
+    .cart-panel { position: fixed; top: 0; right: -390px; width: min(390px, 92vw); height: 100vh; background: #fff; z-index: 999; box-shadow: -8px 0 25px rgba(0,0,0,.18); transition: right .25s ease; display: flex; flex-direction: column; }
+    .cart-panel.open { right: 0; }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; padding: 22px; background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%); color: #fff; }
+    .cart-header h2 { margin: 0; font-size: 22px; }
+    .cart-close { background: transparent; border: 0; color: #fff; font-size: 28px; cursor: pointer; line-height: 1; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 18px; }
+    .cart-item { display: flex; justify-content: space-between; gap: 12px; padding: 15px 0; border-bottom: 1px solid #ffd1e2; }
+    .cart-item strong, .cart-item span { display: block; }
+    .cart-item > div:first-child span { color: #777; font-size: 13px; margin-top: 3px; }
+    .cart-item-controls { display: flex; align-items: center; gap: 8px; }
+    .cart-item-controls button { width: 28px; height: 28px; border: 1px solid #ff69b4; background: #fff; color: #c71585; border-radius: 5px; cursor: pointer; font-size: 18px; }
+    .cart-item-controls button:hover { background: #ffe6f0; }
+    .empty-cart { text-align: center; color: #777; padding: 45px 10px; }
+    .cart-footer { border-top: 2px solid #ffd1e2; padding: 18px 22px 24px; }
+    .cart-total-row { display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; color: #c71585; margin-bottom: 15px; }
+    .cart-checkout { display: block; width: 100%; padding: 12px; text-align: center; text-decoration: none; background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%); color: #fff; border-radius: 7px; font-weight: 700; }
+    .cart-checkout:hover { background: linear-gradient(135deg, #c71585 0%, #8b0000 100%); }
   </style>
 </head>
 <body>
@@ -19,7 +42,11 @@
     <header class="site-header">
       <div class="header-top">
         <div class="logo"><a href="index.html">FreshPress</a></div>
-        <div class="social-links"></div>
+        <button class="cart-button" type="button" aria-label="Open shopping cart" aria-controls="cart-panel">
+          <span class="cart-icon" aria-hidden="true">🛒</span>
+          <span>Cart</span>
+          <span class="cart-count" hidden>0</span>
+        </button>
       </div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
@@ -51,6 +78,17 @@
 
     <footer class="footer"><div class="footer-content"><p>&copy; 2026 FreshPress Dry Cleaning. All rights reserved.</p></div></footer>
   </div>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-header"><h2>Shopping Cart</h2><button class="cart-close" type="button" aria-label="Close shopping cart">&times;</button></div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row"><span>Total</span><span class="cart-total">$0.00</span></div>
+      <a class="cart-checkout" href="contact.html">Continue to Schedule</a>
+    </div>
+  </aside>
+
   <script src="nav.js"></script>
   <script src="products.js"></script>
 </body>
