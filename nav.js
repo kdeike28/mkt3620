@@ -62,7 +62,11 @@
 
       const name = document.createElement("span");
       name.className = "student-name";
-      name.textContent = " | Kwin Deike";
+      name.textContent = "Kwin Deike";
+      name.style.fontSize = "28px";
+      name.style.fontWeight = "700";
+      name.style.color = "#fff";
+      name.style.textShadow = "2px 2px 4px rgba(0,0,0,.2)";
       logo.appendChild(name);
     });
   }
