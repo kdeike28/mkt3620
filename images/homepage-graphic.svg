@@ -24,7 +24,7 @@
     <circle cx="1100" cy="230" r="10"/>
   </g>
 
-  <g transform="translate(390 45)">
+  <g transform="translate(335 45)">
     <path d="M210 45c0-30 25-55 55-55s55 25 55 55" fill="none" stroke="#315b68" stroke-width="16" stroke-linecap="round"/>
     <path d="M265 50 95 155 10 205l90 55 35 215h260l35-215 90-55-85-50z" fill="url(#shirt)" stroke="#315b68" stroke-width="10" stroke-linejoin="round"/>
     <path d="M185 100c24 35 48 52 80 52s56-17 80-52" fill="none" stroke="#8ab6c2" stroke-width="9"/>
