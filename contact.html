@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | FreshPress Dry Cleaning</title>
+  <meta name="description" content="Contact FreshPress Dry Cleaning for questions, service requests, and pickup scheduling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-page { max-width: 1000px; margin: 0 auto; padding: 40px 20px 60px; }
+    .contact-intro { text-align: center; margin-bottom: 30px; }
+    .contact-intro h1 { margin-bottom: 10px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .contact-card { background: #fff; border: 2px solid #ffb3cd; border-radius: 14px; padding: 28px; box-shadow: 0 5px 16px rgba(199,21,133,.10); }
+    .contact-card h2 { margin-top: 0; color: #c71585; }
+    .contact-card label { display: block; font-weight: 700; margin: 14px 0 6px; }
+    .contact-card input, .contact-card textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font: inherit; }
+    .contact-card textarea { min-height: 130px; resize: vertical; }
+    .contact-card button { margin-top: 18px; width: 100%; padding: 13px; border: 0; border-radius: 8px; background: #ff1493; color: #fff; font-weight: 700; cursor: pointer; }
+    .contact-details p { margin: 12px 0; }
+    .contact-details a { color: #c71585; font-weight: 700; }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="header-top">
+        <div class="logo"><a href="index.html">FreshPress</a></div>
+        <div class="social-links"></div>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
+    </header>
+
+    <main class="contact-page">
+      <section class="contact-intro">
+        <h1>Contact Us</h1>
+        <p>Have a question or ready to schedule your dry cleaning? We would love to hear from you.</p>
+      </section>
+
+      <div class="contact-grid">
+        <section class="contact-card contact-details">
+          <h2>Get in Touch</h2>
+          <p><strong>Phone:</strong> <a href="tel:+15155550123">(515) 555-0123</a></p>
+          <p><strong>Email:</strong> <a href="mailto:hello@freshpress.com">hello@freshpress.com</a></p>
+          <p><strong>Hours:</strong><br>Monday–Friday: 8:00 AM–6:00 PM<br>Saturday: 9:00 AM–3:00 PM</p>
+          <p>Contact us for pickup questions, garment-care requests, pricing information, or help choosing the right service.</p>
+        </section>
+
+        <section class="contact-card">
+          <h2>Send a Message</h2>
+          <form action="mailto:hello@freshpress.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> FreshPress Dry Cleaning</p>
+      <div class="social-links"></div>
+    </footer>
+  </div>
+
+  <script src="nav.js" defer></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
