@@ -366,6 +366,9 @@
   }
 
   function renderSocialLinks() {
+    // Keep the Services and Contact pages clean by hiding the social-link list there.
+    if (["services.html", "contact.html"].includes(currentFileName())) return;
+
     document.querySelectorAll(".social-links").forEach((el) => {
       buildList(el, SOCIAL_LINKS);
     });
