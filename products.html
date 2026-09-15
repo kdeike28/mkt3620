@@ -4,36 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products | Kwin Deike</title>
-  <meta name="description" content="Shop the clothing collection." />
-
+  <meta name="description" content="Browse our clothing products with photos and pricing." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .product-image { height: 280px; overflow: hidden; background: #fff5f8; }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  </style>
 </head>
 <body>
-
   <div class="site-wrapper">
-
     <header class="site-header">
       <div class="header-top">
-        <div class="logo">
-          <a href="index.html">Kwin Deike</a>
-        </div>
+        <div class="logo"><a href="index.html">Kwin Deike</a></div>
         <div class="social-links"></div>
       </div>
-
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-        Menu
-      </button>
-
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary"></nav>
     </header>
 
     <section class="page-intro">
-      <h1>Clothing collection</h1>
-      <p>Browse the current lineup below. Swap in real photos, names, and prices for each piece when you're ready.</p>
+      <h1>Our Products</h1>
+      <p>Browse our clothing collection below. Each product includes a clear photo that matches the item description.</p>
     </section>
 
     <div class="product-filters" role="group" aria-label="Filter products by category">
@@ -45,132 +39,111 @@
     </div>
 
     <section class="product-grid" id="product-grid">
-
       <article class="product-card" data-category="tops">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" alt="Cotton Crewneck Tee" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700&h=700&fit=crop" alt="Cotton crewneck tee shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Cotton Crewneck Tee</div>
-          <div class="product-meta">Tops &middot; available in 4 colors</div>
+          <div class="product-meta">Tops · available in 4 colors</div>
           <div class="product-price">$28</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="tops">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1506629082632-f3886b3d0e75?w=400&h=400&fit=crop" alt="Relaxed Linen Shirt" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=700&h=700&fit=crop" alt="Relaxed linen button-down shirt shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Relaxed Linen Shirt</div>
-          <div class="product-meta">Tops &middot; available in 3 colors</div>
+          <div class="product-meta">Tops · available in 3 colors</div>
           <div class="product-price">$54</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="bottoms">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop" alt="Straight Leg Trousers" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=700&h=700&fit=crop" alt="Straight leg trousers shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Straight Leg Trousers</div>
-          <div class="product-meta">Bottoms &middot; available in 2 colors</div>
+          <div class="product-meta">Bottoms · available in 2 colors</div>
           <div class="product-price">$68</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="bottoms">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop" alt="Washed Denim Jeans" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1542272604-787c62d465d1?w=700&h=700&fit=crop" alt="Washed denim jeans shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Washed Denim Jeans</div>
-          <div class="product-meta">Bottoms &middot; available in 3 washes</div>
+          <div class="product-meta">Bottoms · available in 3 washes</div>
           <div class="product-price">$74</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="outerwear">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1539533057687-c8a8fc6df495?w=400&h=400&fit=crop" alt="Wool Blend Overcoat" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1539533057687-c8a8fc6df495?w=700&h=700&fit=crop" alt="Wool blend overcoat shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Wool Blend Overcoat</div>
-          <div class="product-meta">Outerwear &middot; available in 2 colors</div>
+          <div class="product-meta">Outerwear · available in 2 colors</div>
           <div class="product-price">$180</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="outerwear">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop" alt="Quilted Bomber Jacket" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=700&h=700&fit=crop" alt="Quilted bomber jacket shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Quilted Bomber Jacket</div>
-          <div class="product-meta">Outerwear &middot; available in 3 colors</div>
+          <div class="product-meta">Outerwear · available in 3 colors</div>
           <div class="product-price">$120</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="accessories">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop" alt="Canvas Tote Bag" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=700&h=700&fit=crop" alt="Canvas tote bag shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Canvas Tote Bag</div>
-          <div class="product-meta">Accessories &middot; one size</div>
+          <div class="product-meta">Accessories · one size</div>
           <div class="product-price">$32</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
 
       <article class="product-card" data-category="accessories">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop" alt="Ribbed Beanie" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=700&h=700&fit=crop" alt="Ribbed beanie shown in product photo" loading="lazy" />
         </div>
         <div class="product-info">
           <div class="product-name">Ribbed Beanie</div>
-          <div class="product-meta">Accessories &middot; available in 4 colors</div>
+          <div class="product-meta">Accessories · available in 4 colors</div>
           <div class="product-price">$22</div>
         </div>
-        <div class="product-actions">
-          <button type="button">Add to cart</button>
-        </div>
+        <div class="product-actions"><button type="button">Add to cart</button></div>
       </article>
-
     </section>
 
     <footer class="site-footer">
       <p>&copy; <span id="year"></span> Kwin Deike</p>
       <div class="social-links"></div>
     </footer>
-
   </div>
 
   <script src="nav.js" defer></script>
   <script src="products.js" defer></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
