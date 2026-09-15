@@ -13,11 +13,10 @@
   "use strict";
 
   // ---- 1. Single source of truth for site navigation -----------------
-  // Edit this list once; every page that includes nav.js stays in sync.
   const NAV_LINKS = [
     { label: "Home", href: "index.html" },
     { label: "Products", href: "products.html" },
-    { label: "Services", href: "projects.html" },
+    { label: "Services", href: "services.html" },
     { label: "Blog", href: "blog.html" },
     { label: "Contact", href: "contact.html" },
   ];
@@ -27,8 +26,6 @@
     { label: "Twitter", href: "https://twitter.com/" },
     { label: "LinkedIn", href: "https://linkedin.com/" },
   ];
-
-  // ---- 2. Helpers -------------------------------------------------------
 
   function currentFileName() {
     const path = window.location.pathname;
@@ -59,8 +56,6 @@
     container.appendChild(ul);
   }
 
-  // ---- 3. Render nav + social links --------------------------------------
-
   function renderPrimaryNav() {
     const nav = document.querySelector(".primary-nav");
     if (!nav) return;
@@ -73,8 +68,6 @@
     });
   }
 
-  // ---- 4. Mobile toggle ---------------------------------------------------
-
   function wireMobileToggle() {
     const nav = document.querySelector(".primary-nav");
     const toggle = document.querySelector(".nav-toggle");
@@ -85,7 +78,6 @@
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close the mobile menu after a link is tapped
     nav.addEventListener("click", (e) => {
       if (e.target.tagName === "A") {
         nav.classList.remove("open");
@@ -93,8 +85,6 @@
       }
     });
   }
-
-  // ---- 5. Init --------------------------------------------------------
 
   function init() {
     renderPrimaryNav();
