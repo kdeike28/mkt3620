@@ -22,7 +22,13 @@
     .contact-card button { margin-top: 18px; width: 100%; padding: 13px; border: 0; border-radius: 8px; background: #ff1493; color: #fff; font-weight: 700; cursor: pointer; }
     .contact-details p { margin: 12px 0; }
     .contact-details a { color: #c71585; font-weight: 700; }
-    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+    .form-section { margin-top: 24px; text-align: center; }
+    .google-form-wrapper { background: #fff; border: 2px solid #ffb3cd; border-radius: 14px; padding: 12px; box-shadow: 0 5px 16px rgba(199,21,133,.10); overflow: hidden; }
+    .google-form-wrapper iframe { display: block; width: 100%; max-width: 640px; min-height: 512px; height: 512px; margin: 0 auto; border: 0; }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .google-form-wrapper iframe { min-height: 650px; height: 650px; }
+    }
   </style>
 </head>
 <body>
@@ -67,6 +73,14 @@
           </form>
         </section>
       </div>
+
+      <section class="form-section">
+        <h2>Schedule a Pickup</h2>
+        <p>Fill out our form below and we’ll get your request.</p>
+        <div class="google-form-wrapper">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrMKDJb1YNPqmrEz-XPFGwywV2jFuWa5OWKf32cg-l-UK33A/viewform?embedded=true" width="640" height="512" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
