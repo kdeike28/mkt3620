@@ -55,12 +55,13 @@
 
   function renderStudentName() {
     document.querySelectorAll(".header-top").forEach((headerTop) => {
-      if (headerTop.querySelector(".student-name")) return;
+      const logo = headerTop.querySelector(".logo");
+      if (!logo || logo.querySelector(".student-name")) return;
 
-      const name = document.createElement("div");
+      const name = document.createElement("span");
       name.className = "student-name";
       name.textContent = "Kwin Deike";
-      headerTop.appendChild(name);
+      logo.appendChild(name);
     });
   }
 
