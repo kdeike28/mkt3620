@@ -69,6 +69,14 @@
       logo.style.paddingRight = "0";
       logo.style.fontSize = "28px";
 
+      const separator = document.createElement("span");
+      separator.className = "name-separator";
+      separator.textContent = " | ";
+      separator.style.fontSize = "28px";
+      separator.style.fontWeight = "700";
+      separator.style.color = "#fff";
+      separator.style.textShadow = "2px 2px 4px rgba(0,0,0,.2)";
+
       const name = document.createElement("span");
       name.className = "student-name";
       name.textContent = "Kwin Deike";
@@ -76,6 +84,8 @@
       name.style.fontWeight = "700";
       name.style.color = "#fff";
       name.style.textShadow = "2px 2px 4px rgba(0,0,0,.2)";
+
+      logo.appendChild(separator);
       logo.appendChild(name);
     });
   }
