@@ -9,6 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .service-icon { font-size: 38px; padding: 24px 20px; text-align: center; background: linear-gradient(135deg,#fff0f6,#ffe1ed); }
+    .pricing-note { text-align:center; color:#666; margin-top:-8px; margin-bottom:22px; }
+    .pricing-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; list-style:none; padding:0; }
+    .pricing-list li { background:#fff5f8; border-radius:8px; padding:12px 15px; display:flex; justify-content:space-between; gap:12px; }
+    .pickup-cta { max-width:1160px; margin:0 auto 40px; padding:30px; width:calc(100% - 40px); border-radius:14px; background:linear-gradient(135deg,#c71585,#ff1493); color:#fff; text-align:center; box-shadow:0 5px 16px rgba(199,21,133,.22); }
+    .pickup-cta h2 { margin-bottom:8px; }
+    .pickup-cta p { margin-bottom:18px; }
+    .pickup-cta a { display:inline-block; background:#fff; color:#c71585; text-decoration:none; font-weight:700; padding:12px 24px; border-radius:25px; }
+    .pickup-cta a:hover { transform:translateY(-2px); }
+  </style>
 </head>
 <body>
   <div class="site-wrapper">
@@ -23,68 +34,74 @@
 
     <section class="page-intro">
       <h1>Dry Cleaning Services</h1>
-      <p>Fresh clothes, professionally cared for. Choose the service that works best for you and pick up your garments clean, pressed, and ready to wear.</p>
+      <p>Look your best without the hassle. FreshPress professionally cleans, presses, and cares for your clothes so you can spend your time on what matters.</p>
     </section>
 
     <section class="product-grid">
       <article class="product-card">
-        <div class="product-image">Dry Cleaning</div>
+        <div class="service-icon">👔</div>
         <div class="product-info">
           <div class="product-name">Everyday Dry Cleaning</div>
-          <div class="product-meta">Professional cleaning for everyday garments</div>
-          <p class="product-meta">Shirts, blouses, skirts, sweaters, and other delicate clothing are carefully cleaned and pressed.</p>
+          <div class="product-meta">Shirts, blouses, pants &amp; skirts</div>
+          <p class="product-meta">Professional cleaning and pressing for the clothes you wear every day.</p>
           <div class="product-price">Starting at $6.50</div>
         </div>
         <div class="product-actions"><button type="button">Choose service</button></div>
       </article>
 
       <article class="product-card">
-        <div class="product-image">Premium Garment Care</div>
+        <div class="service-icon">👗</div>
         <div class="product-info">
           <div class="product-name">Premium Garment Care</div>
-          <div class="product-meta">Suits, dresses, coats &amp; specialty items</div>
-          <p class="product-meta">Extra care for formalwear and delicate pieces, including professional pressing and finishing.</p>
-          <div class="product-price">Starting at $14.00</div>
+          <div class="product-meta">Dresses, suits, coats &amp; delicate items</div>
+          <p class="product-meta">Extra attention for formalwear and specialty pieces, with professional finishing.</p>
+          <div class="product-price">Starting at $12.00</div>
         </div>
         <div class="product-actions"><button type="button">Choose service</button></div>
       </article>
 
       <article class="product-card">
-        <div class="product-image">Wash &amp; Fold</div>
+        <div class="service-icon">🧺</div>
         <div class="product-info">
           <div class="product-name">Wash &amp; Fold</div>
           <div class="product-meta">Everyday laundry &middot; priced by the pound</div>
-          <p class="product-meta">Clothes are washed, dried, neatly folded, and packaged so you can skip the laundry room.</p>
+          <p class="product-meta">We wash, dry, neatly fold, and package your everyday laundry for easy pickup.</p>
           <div class="product-price">$2.25 / lb</div>
         </div>
         <div class="product-actions"><button type="button">Choose service</button></div>
       </article>
 
       <article class="product-card">
-        <div class="product-image">Express Service</div>
+        <div class="service-icon">⚡</div>
         <div class="product-info">
           <div class="product-name">24-Hour Express</div>
           <div class="product-meta">Fast turnaround for busy schedules</div>
-          <p class="product-meta">Need it sooner? Get your dry cleaning back within 24 hours for a small rush-service fee.</p>
+          <p class="product-meta">Need it quickly? Get your order back within 24 hours with a small rush-service fee.</p>
           <div class="product-price">Regular price + $5</div>
         </div>
         <div class="product-actions"><button type="button">Choose service</button></div>
       </article>
     </section>
 
-    <section style="max-width:1200px;margin:0 auto;padding:10px 20px 40px;width:100%;">
-      <div style="background:#fff;border:2px solid #ffb6c1;border-radius:12px;padding:25px;box-shadow:0 2px 8px rgba(255,105,180,.1);">
-        <h2 style="color:#c71585;margin-bottom:15px;">Simple Pricing</h2>
-        <p style="color:#666;margin-bottom:15px;">Our prices are designed to make professional garment care easy and affordable.</p>
-        <ul style="list-style:none;padding:0;color:#444;line-height:2;">
-          <li><strong>Shirts &amp; blouses:</strong> $6.50 each</li>
-          <li><strong>Pants &amp; skirts:</strong> $8.00 each</li>
-          <li><strong>Dresses:</strong> $12.00 each</li>
-          <li><strong>Suits:</strong> $18.00 each</li>
-          <li><strong>Coats &amp; jackets:</strong> $16.00 each</li>
-          <li><strong>Wash &amp; fold:</strong> $2.25 per pound</li>
+    <section style="max-width:1160px;margin:0 auto;padding:10px 20px 35px;width:100%;">
+      <div style="background:#fff;border:2px solid #ffb6c1;border-radius:14px;padding:28px;box-shadow:0 2px 8px rgba(255,105,180,.1);">
+        <h2 style="color:#c71585;text-align:center;margin-bottom:8px;">Simple, Upfront Pricing</h2>
+        <p class="pricing-note">No confusing packages. Just straightforward prices for the care your clothes need.</p>
+        <ul class="pricing-list">
+          <li><span>Shirts &amp; blouses</span><strong>$6.50</strong></li>
+          <li><span>Pants &amp; skirts</span><strong>$8.00</strong></li>
+          <li><span>Dresses</span><strong>$12.00</strong></li>
+          <li><span>Suits</span><strong>$18.00</strong></li>
+          <li><span>Coats &amp; jackets</span><strong>$16.00</strong></li>
+          <li><span>Wash &amp; fold</span><strong>$2.25 / lb</strong></li>
         </ul>
       </div>
+    </section>
+
+    <section class="pickup-cta">
+      <h2>Ready for a Fresh Start?</h2>
+      <p>Schedule a pickup and let FreshPress take care of the cleaning.</p>
+      <a href="contact.html">Schedule a Pickup</a>
     </section>
 
     <footer class="site-footer">
