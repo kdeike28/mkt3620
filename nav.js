@@ -60,7 +60,7 @@
 
       const name = document.createElement("span");
       name.className = "student-name";
-      name.textContent = "Kwin Deike";
+      name.textContent = " | Kwin Deike";
       logo.appendChild(name);
     });
   }
