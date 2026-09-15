@@ -53,6 +53,17 @@
     buildList(nav, NAV_LINKS, { markActive: true });
   }
 
+  function renderStudentName() {
+    document.querySelectorAll(".header-top").forEach((headerTop) => {
+      if (headerTop.querySelector(".student-name")) return;
+
+      const name = document.createElement("div");
+      name.className = "student-name";
+      name.textContent = "Kwin Deike";
+      headerTop.appendChild(name);
+    });
+  }
+
   function renderSocialLinks() {
     document.querySelectorAll(".social-links").forEach((el) => {
       buildList(el, SOCIAL_LINKS);
@@ -79,6 +90,7 @@
 
   function init() {
     renderPrimaryNav();
+    renderStudentName();
     renderSocialLinks();
     wireMobileToggle();
   }
